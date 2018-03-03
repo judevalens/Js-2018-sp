@@ -11,7 +11,8 @@
 		}
 		table{
 
-			width: 80%;
+			width: 100%;
+
 		}
 
 		.filled{
@@ -19,6 +20,8 @@
 			background-color: blue;
 		}
 	</style>
+
+<link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
 	<div>
@@ -34,8 +37,6 @@
 </body>
 <script type="text/javascript">
 	var table = document.getElementById("table");
-
-
 	var tr = document.createElement("tr");
 	var td = document.createElement("td");
 	//var node = document.createTextNode("This is new.");
@@ -58,7 +59,7 @@ function createTable () {
 			} 
 
 
-			if(j == nInput-j){
+			if(i == nInput-j-1){
 
 			cell.setAttribute('class', 'filled' );
 
