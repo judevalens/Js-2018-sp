@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Exo 1</title>
+	<style type="text/css">
+		td{
+
+			border: 2px black solid;
+			width: 15%;
+			height: 30px;
+		}
+		table{
+
+			width: 80%;
+		}
+
+		.filled{
+
+			background-color: blue;
+		}
+	</style>
+</head>
+<body>
+	<div>
+		<label>N input :</label><input type="text" name="nInput" id="nInput">
+	</div>
+<div>
+	<table id="table">
+		
+	</table>
+</div>
+
+<button onclick="createTable()">create table</button>
+</body>
+<script type="text/javascript">
+	var table = document.getElementById("table");
+
+
+	var tr = document.createElement("tr");
+	var td = document.createElement("td");
+	//var node = document.createTextNode("This is new.");
+
+
+
+function createTable () {
+	    var nInput = document.getElementById("nInput").value;
+
+    for (var i = 0; i < nInput; i++) {
+    	var row = table.insertRow(i);
+
+		for (var j = 0; j < nInput; j++) {
+
+    		var cell = row.insertCell(j);
+
+			if(i == j){
+
+				cell.setAttribute('class', 'filled' );
+			} 
+
+
+			if(j == nInput-j){
+
+			cell.setAttribute('class', 'filled' );
+
+			}
+			
+
+
+
+		}
+
+    }
+}
+
+
+
+
+</script>
+</html>
