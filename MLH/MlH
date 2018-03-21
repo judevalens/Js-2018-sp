@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+        </title>
+    </head>
+    <body>
+    </body>
+    <script type="text/javascript">
+        function fizzBuzz(number) {
+		if(number/3 == 0 && number/5 == 0){
+
+			console.log("fiz");
+		}
+		else{
+
+					console.log(number);
+
+		}
+
+		if(number/5 == 0 & number/3 != 0){
+	console.log("buz");
+
+		}
+		else{
+
+			console.log(number);
+		}
+
+
+		if(number/5 == 0 && number/3 == 0){
+
+			console.log("fizBuzz");
+		}
+
+
+
+	}
+
+
+
+	for(var j = 0; j < 15; j++){
+
+		fizBuzz(i);
+	}
+    </script>
+</html>

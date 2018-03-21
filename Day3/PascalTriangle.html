@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            Pascal triangle
+        </title>
+        <link href="../style.css" rel="stylesheet" type="text/css">
+        </link>
+    </head>
+    <body>
+        <label>
+            Array size :
+        </label>
+        <input id="height" name="" type="text">
+        </input>
+        <input id="Submit" name="" type="Submit">
+        </input>
+        <div id="div" style="text-align: center !important">
+        </div>
+    </body>
+    <script type="text/javascript">
+        var submit = document.getElementById("Submit");
+        submit.addEventListener("click", function(e) {
+      	 var input = document.getElementById("height").value;
+
+   		 Pascal_array(input);
+});
+
+
+        function Pascal_array (height) {
+             var  mN, lN;
+             var row = [];
+
+    		for(var j = 0; j < height; j++){
+             	var newRow = [];
+    			for (var i = 0; i <= j; i++){
+
+    				if(i == 0 || i == j){
+    					newRow.push(1);
+    				} else {
+    					newRow.push(row[i]+row[i-1]);
+    				}
+    			}
+    			row = newRow
+    			console.log(row);
+
+    			document.getElementById('div').innerHTML += '<p>'+row.toString()+'</p>';
+    			    		}
+    	}
+    </script>
+</html>

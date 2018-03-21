@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+        </title>
+    </head>
+    <body>
+    </body>
+    <script type="text/javascript">
+        var array = [20,15,-5,10,17,35,5];
+
+	function equalside(arr){
+
+
+		var length = arr.length;
+
+
+		//console.log(length);
+
+		var leftnumber = 0; 
+//console.log(length);
+
+		for(var j = 0; j < length; j++){
+
+                      
+                     leftnumber += arr[j];
+
+                      var left = 0;
+
+                      var right = length-j;
+
+
+                      var rightNumber = 0;
+
+//
+                     	console.log(leftnumber + " L");
+
+                      for(var k = j+2; k < length; k++){
+               
+                         rightNumber += arr[k];
+
+
+                      }
+                     console.log(rightNumber + " R");
+
+
+                     if(leftnumber == rightNumber){
+
+                     	console.log("the middle :" + array[j+1]);
+                     }
+
+
+
+
+
+		}
+
+	}
+
+
+	equalside(array);
+    </script>
+</html>

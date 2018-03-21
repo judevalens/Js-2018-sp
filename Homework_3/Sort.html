@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            Sort
+        </title>
+        <link href="../style.css" rel="stylesheet" type="text/css">
+        </link>
+    </head>
+    <body>
+        <div style="margin: auto !important; width: 80% !important; text-align: center; margin-top: 10% !important;">
+            <input id="array" name="" type="text"/>
+            <input id="submit" name="" type="submit"/>
+            <select id="order">
+                <option value="A">
+                    Ascending order
+                </option>
+                <option value="D">
+                    Descending order
+                </option>
+            </select>
+            <span id="show" style="margin-top:  15% !important;">
+            </span>
+        </div>
+    </body>
+    <script type="text/javascript">
+        document.getElementById("submit").addEventListener("click", function(e) {
+            var array = document.getElementById("array").value.trim().split(" ");
+            var result  = sort_algorithm(array,document.getElementById("order").value);
+            document.getElementById("show").innerHTML = "<h1>"+result.toString()+"</h1>";
+
+});
+    	//document.getElementById("array").value;
+       // var arr = [9,3,5,2,1,5,7,8,4,6,90,10,100,80,0];
+
+
+	
+
+	function sort_algorithm (arr,order) {
+		var length = arr.length;
+	x_sqrt = 0;
+		for (var i = 0; i < length; i++) {
+
+		if(i == length-1 && x_sqrt != (length-1)*(length-1)){
+
+			i = 0;
+		}
+		r = i+1;
+		if(order == "A"){
+		if(Number(arr[i]) > Number(arr[r])){
+			item = arr[r];
+			arr.splice(r,1);
+			arr.splice(i, 0, item);
+		}	
+	}else{
+		if(Number(arr[i]) < Number(arr[r])){
+			item = arr[r];
+			arr.splice(r,1);
+			arr.splice(i, 0, item);
+	}
+	}
+	x_sqrt++;
+		console.log(arr);
+
+}
+
+	return arr;
+
+}
+    </script>
+</html>

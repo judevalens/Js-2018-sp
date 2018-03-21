@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+        </title>
+        <link href="../style.css" rel="stylesheet" type="text/css">
+        </link>
+    </head>
+    <body>
+        <div>
+            <h1>
+                Enter 2 binary numbers :
+            </h1>
+            <input id="first" name="" type="number">
+                <input id="second" name="" type="number">
+                    <input id="submit" type="submit">
+                    </input>
+                </input>
+            </input>
+            <h2 id="Result">
+                Result :
+            </h2>
+        </div>
+    </body>
+    <script type="text/javascript">
+        var submit = document.getElementById("submit");
+submit.addEventListener("click", function(e) {
+    var first = document.getElementById("first").value;
+    var second = document.getElementById("second").value;
+    var number1 = convert_binary_to_num(first, second);
+});
+
+function convert_binary_to_num(number1, number2) {
+    var sum = [];
+    var final = "";
+    var arr1 = [];
+    var arr2 = [];
+    switch (number1.length > number2.length) {
+        case true:
+        alert(number1.length);
+            for(var j = 0; j < number1.length; j++){
+            	arr1.push(number1.charAt(j));
+
+            	if(j < number2.length){
+            	arr2.push(number2.charAt(j));
+            	}
+            	else{
+           		arr2.unshift("0");
+            	}
+            }
+            break;
+        case false:
+         for(var j = 0; j < number2.length; j++){
+            	arr2.push(number2.charAt(j));
+
+            	if(j < number1.length){
+            	arr1.push(number1.charAt(j));
+            	}
+            	else{
+           		arr1.unshift("0");
+            	}
+            }
+            break;
+    }
+    var carry = Number.parseInt(0);
+    for (var j = 0; j < arr1.length; j++) {
+        var lastI = arr1.length- 1 - j;
+        var n1 = Number.parseInt(arr1[lastI]);
+        var n2 = Number.parseInt(arr2[lastI]);
+        switch (n1 + n2 + carry) {
+            case 1:
+                sum.unshift(1);
+                final = final + "1";
+                carry = 0;
+                break;
+            case 0:
+                sum.unshift(0);
+                final = final + "0";
+                carry = 0;
+                break;
+            case 2:
+                sum.unshift(0);
+                final = final + "0";
+                carry = 1;
+                break;
+            case 3:
+                sum.unshift(1);
+                final = final + "1";
+                carry = 1;
+                break;
+        }
+        if (j == arr1.length - 1) {
+            sum.unshift(carry);
+            final = final + carry.toString();
+        }
+    }
+
+    ////////Showing the result.
+    for (var j = 0; j < sum.length; j++) {
+        document.getElementById("Result").appendChild(document.createTextNode(sum[j]));
+    }
+    
+    return sum;
+}
+    </script>
+</html>

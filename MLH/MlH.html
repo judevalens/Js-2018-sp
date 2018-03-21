@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+        </title>
+    </head>
+    <body>
+    </body>
+    <script type="text/javascript">
+        function fizzBuzz(number) {
+
+        	if(number%5 == 0 && number%3 == 0){
+
+			console.log("fizzBuzz");
+		}
+		else if(number%3 == 0){
+
+			console.log("fiz");
+
+		}
+		else if(number%5 == 0 && number%3 != 0){
+	console.log("buzz");
+		}
+		else{
+
+			console.log(number);
+		}
+
+	}
+
+
+
+	for(var j = 0; j <= 15; j++){
+
+		fizzBuzz(j);
+
+	}
+    </script>
+</html>

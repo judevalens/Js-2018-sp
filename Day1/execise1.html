@@ -1,12 +1,14 @@
 <!DOCTYPE html>
 <html>
-<head>
-	<title>Exo 1</title>
-	<style type="text/css">
-		td{
+    <head>
+        <title>
+            Exo 1
+        </title>
+        <style type="text/css">
+            td{
 
 			border: 2px black solid;
-			width: 15%;
+			width: 5%;
 			height: 30px;
 		}
 		table{
@@ -19,24 +21,27 @@
 
 			background-color: blue;
 		}
-	</style>
-
-<link rel="stylesheet" type="text/css" href="style.css">
-</head>
-<body>
-	<div>
-		<label>N input :</label><input type="text" name="nInput" id="nInput">
-	</div>
-<div>
-	<table id="table">
-		
-	</table>
-</div>
-
-<button onclick="createTable()">create table</button>
-</body>
-<script type="text/javascript">
-	var table = document.getElementById("table");
+        </style>
+        <link href="../style.css" rel="stylesheet" type="text/css">
+        </link>
+    </head>
+    <body>
+        <div>
+            <label>
+                N input :
+            </label>
+            <input id="nInput" name="nInput" type="text">
+            </input>
+            <input onclick="createTable()" type="submit" value="Create table">
+            </input>
+        </div>
+        <div>
+            <table id="table">
+            </table>
+        </div>
+    </body>
+    <script type="text/javascript">
+        var table = document.getElementById("table");
 	var tr = document.createElement("tr");
 	var td = document.createElement("td");
 	//var node = document.createTextNode("This is new.");
@@ -58,23 +63,15 @@ function createTable () {
 				cell.setAttribute('class', 'filled' );
 			} 
 
-
 			if(i == nInput-j-1){
 
 			cell.setAttribute('class', 'filled' );
 
 			}
 			
-
-
-
 		}
 
     }
 }
-
-
-
-
-</script>
+    </script>
 </html>

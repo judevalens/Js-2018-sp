@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            Roman Decimal
+        </title>
+        <link href="../style.css" rel="stylesheet" type="text/css">
+        </link>
+    </head>
+    <body>
+        <div style="margin: auto !important; width: 80% !important; text-align: center; margin-top: 10% !important;">
+            <label>
+                Roman Number:
+            </label>
+            <input id="number" name="" type="text">
+            </input>
+            <input id="Submit" name="" type="Submit">
+            </input>
+            <span id="div">
+            </span>
+        </div>
+    </body>
+    <script type="text/javascript">
+        var submit = document.getElementById("Submit");
+        submit.addEventListener("click", function(e) {
+            var input = document.getElementById("number").value;
+            rTOdecimal(input);
+        });
+
+        function rTOdecimal(number) {
+
+            var roman = [];
+            var n = 0;
+            var actual_n = 0;
+            var pN = 0;
+            for (var i = 0; i < number.length; i++) {
+                switch (number.charAt(number.length-1-i)) {
+                    case "I":
+                        actual_n = 1;
+                      if (pN <= actual_n) {
+                            n += actual_n;
+                        } else {
+                            n -= actual_n;
+                        }
+                        pN = actual_n;
+                        break;
+                    case "V":
+                      actual_n = 5;
+                      if (pN <= actual_n) {
+                            n += actual_n;
+                        } else {
+                            n -= actual_n;
+                        }
+                        pN = actual_n;
+                        break;
+                         case "X":
+                        actual_n = 10;
+                      if (pN <= actual_n) {
+                            n += actual_n;
+                        } else {
+                            n -= actual_n;
+                        }
+                        pN = actual_n;
+                        break;
+                    case "L":
+                        actual_n = 50;
+                      if (pN <= actual_n) {
+                            n += actual_n;
+                        } else {
+                            n -= actual_n;
+                        }
+                        pN = actual_n;
+                        break;
+                    case "C":
+                        actual_n = 100;
+                      if (pN <= actual_n) {
+                            n += actual_n;
+                        } else {
+                            n -= actual_n;
+                        }
+                        pN = actual_n;
+                        break;
+                    case "D":
+                        actual_n = 500;
+                      if (pN <= actual_n) {
+                            n += actual_n;
+                        } else {
+                            n -= actual_n;
+                        }
+                        pN = actual_n;
+                        break;
+                    case "M":
+                        actual_n = 1000;
+                      if (pN <= actual_n) {
+                            n += actual_n;
+                        } else {
+                            n -= actual_n;
+                        }
+                        pN = actual_n;
+                        break;
+                    default:
+                        // statements_def
+                        break;
+                }
+           console.log(n);
+            }
+            document.getElementById("div").innerHTML = "DECIMAL NUMBER : " + n;
+        }
+    </script>
+</html>

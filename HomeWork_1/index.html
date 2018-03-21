@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            Home work
+        </title>
+        <link href="../style.css" rel="stylesheet" type="text/css">
+        </link>
+    </head>
+    <body>
+        <div class="container">
+            <div id="show">
+            </div>
+        </div>
+    </body>
+    <script type="text/javascript">
+        var ar = [
+         ['J', 'L', 'L', 'M'],
+         ['u', 'i', 'i', 'a'],
+         ['s', 'v', 'f', 'n'],
+         ['t', 'e', 'e', '*'],
+     ];
+
+
+ var ar2 = [
+     ['T', 'M', 'i', 't', 'p', 'o', 't', 'c'],
+     ['h', 'i', 's', 'h', 'o', 'f', 'h', 'e'],
+     ['e', 't', '', 'e', 'w', '', 'e', 'l'],
+     ['', 'o', '', '', 'e', '', '', 'l'],
+     ['', 'c', '', '', 'r', '', '', ''],
+     ['', 'h', '', '', 'h', '', '', ''],
+     ['', 'o', '', '', 'o', '', '', ''],
+     ['', 'n', '', '', 'u', '', '', ''],
+     ['', 'd', '', '', 's', '', '', ''],
+     ['', 'r', '', '', 'e', '', '', ''],
+     ['', 'i', '', '', '', '', '', ''],
+     ['', 'a', '', '', '', '', '', '']
+ ];
+ var Arraylength;
+
+
+ var finalArray = [];
+ var completeArray = [];
+ for (var i = 0; i < ar.length; i++) {
+     Arraylength = ar[i].length;
+     for (var j = 0; j < ar[i].length; j++) {
+         completeArray.push(ar[i][j]);
+     }
+ }
+
+
+ var L = completeArray.length;
+
+ var totalword = Arraylength;
+
+ n = 0;
+ t = 0;
+
+
+ for (var f = 0; f < completeArray.length; f++) {
+     for (var k = 0; k < totalword; k++) {
+         n = k * totalword + f;
+
+ if(t < L){
+             
+             if(k < totalword-1){
+                    finalArray.push(completeArray[n]);
+             }
+             else {
+            finalArray.push(completeArray[n]);
+            finalArray.push(" ");
+}
+
+}
+         t++;
+
+         }
+     }
+ 
+
+ var show  = document.getElementById("show");
+
+ show.innerHTML = finalArray.toString().replace(/,/g, "");
+
+ 
+ console.log(completeArray);
+ console.log(finalArray);
+    </script>
+</html>
